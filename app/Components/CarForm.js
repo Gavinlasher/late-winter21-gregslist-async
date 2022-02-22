@@ -1,11 +1,13 @@
-import { Car } from "../Models/Car.js"
+import { Car } from "../Models/Car.js";
 
 // NOTE just a place to keep the ugly form html out of site
 export function getCarForm(car = {}) {
   // @ts-ignore
-  const carData = new Car(car)
+  const carData = new Car(car);
   return `
-  <form class="row  p-2" onsubmit="app.carsController.handleSubmit('${carData.id}')">
+  <form class="row  p-2" onsubmit="app.carsController.handleSubmit('${
+    carData.id
+  }')">
                   <h3 class="col-12">Create a Car</h3>
                   <div class="mb-3 col-5">
                     <label for="" class="form-label">Make</label>
@@ -20,12 +22,16 @@ export function getCarForm(car = {}) {
                   <div class="mb-3 col-2">
                     <label for="" class="form-label">Year</label>
                     <input required type="number" class="form-control" name="year" id="year" aria-describedby="helpId"
-                      placeholder=""  min="1990" max="3000" value="${carData.year}">
+                      placeholder=""  min="1990" max="3000" value="${
+                        carData.year
+                      }">
                   </div>
                   <div class="mb-3 col-12">
                     <label for="" class="form-label">Description</label>
                     <input maxlength="50" required type="text" class="form-control" name="description" id="description"
-                      aria-describedby="helpId" placeholder="" value="${carData.description}">
+                      aria-describedby="helpId" placeholder="" value="${
+                        carData.description
+                      }">
                   </div>
                   <div class="mb-3 col-6">
                     <label for="" class="form-label">Price</label>
@@ -42,6 +48,8 @@ export function getCarForm(car = {}) {
                     <input required type="text" class="form-control" name="imgUrl" id="imgUrl" aria-describedby="helpId"
                       placeholder="" value="${carData.imgUrl}">
                   </div>
-                    <button class="col-4 offset-8 btn btn-success"> ${car.id ? 'Edit' : 'Create'}</button>
-                </form>`
+                    <button class="col-4 offset-8 btn btn-success"> ${
+                      car.id ? "Edit" : "Create"
+                    }</button>
+                </form>`;
 }
